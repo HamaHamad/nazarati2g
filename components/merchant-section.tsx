@@ -107,7 +107,7 @@ export function MerchantSection() {
             <Button
               size="lg"
               className="h-auto px-5 py-2.5"
-              render={<a href="#cta" />}
+              render={<a href="/vendor/register" />}
             >
               {m.openShop}
             </Button>

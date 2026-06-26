@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import { Glasses, ArrowRight, Languages } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/lib/i18n"
+import { Glasses, ArrowRight, Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/i18n";
 
 export function CtaFooter() {
-  const { t, toggle } = useLanguage()
+  const { t, toggle } = useLanguage();
 
   return (
     <>
-      <section id="cta" className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+      <section
+        id="cta"
+        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24"
+      >
         <div className="relative overflow-hidden rounded-3xl bg-primary px-6 py-14 text-center text-primary-foreground sm:px-12">
           <div
             aria-hidden="true"
@@ -27,7 +30,7 @@ export function CtaFooter() {
                 size="lg"
                 variant="secondary"
                 className="h-auto px-6 py-3 text-base"
-                render={<a href="#" />}
+                render={<a href="/vendor/register" />}
               >
                 {t.cta.createBtn}
                 <ArrowRight className="size-4 rtl:rotate-180" />
@@ -36,7 +39,7 @@ export function CtaFooter() {
                 size="lg"
                 variant="ghost"
                 className="h-auto px-6 py-3 text-base text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-                render={<a href="#merchants" />}
+                render={<a href="/vendor/register" />}
               >
                 {t.cta.listBtn}
               </Button>
@@ -49,7 +52,7 @@ export function CtaFooter() {
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[1.5fr_2fr]">
             <div>
-              <a href="#" className="flex items-center gap-2">
+              <a href="/" className="flex items-center gap-2">
                 <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
                   <Glasses className="size-5" />
                 </span>
@@ -71,7 +74,14 @@ export function CtaFooter() {
                     {col.links.map((l) => (
                       <li key={l}>
                         <a
-                          href="#"
+                          href={
+                            l === "افتح محلًا" ||
+                            l === "Open a shop" ||
+                            l === "كن تاجر جملة" ||
+                            l === "Become a wholesaler"
+                              ? "/vendor/register"
+                              : "#"
+                          }
                           className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                         >
                           {l}
@@ -108,5 +118,5 @@ export function CtaFooter() {
         </div>
       </footer>
     </>
-  )
+  );
 }

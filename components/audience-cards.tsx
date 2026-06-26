@@ -5,8 +5,8 @@ import { useLanguage } from "@/lib/i18n"
 
 const meta = [
   { icon: Users, href: "#discover", featured: false },
-  { icon: Store, href: "#merchants", featured: true },
-  { icon: Truck, href: "#wholesalers", featured: false },
+  { icon: Store, href: "/vendor/register", featured: true },
+  { icon: Truck, href: "/vendor/register", featured: false },
 ]
 
 export function AudienceCards() {

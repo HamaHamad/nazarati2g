@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Glasses, Menu, X, Languages } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/lib/i18n"
+import { useState } from "react";
+import { Glasses, Menu, X, Languages } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/i18n";
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false)
-  const { t, toggle } = useLanguage()
+  const [open, setOpen] = useState(false);
+  const { t, toggle } = useLanguage();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#" className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <span className="flex size-9 items-center justify-center rounded-xl bg-primary text-primary-foreground">
             <Glasses className="size-5" />
           </span>
@@ -43,10 +43,10 @@ export function SiteHeader() {
             <Languages className="size-4" />
             {t.header.toggle}
           </Button>
-          <Button variant="ghost" size="lg" render={<a href="#" />}>
+          <Button variant="ghost" size="lg" render={<a href="/vendor/login" />}>
             {t.header.login}
           </Button>
-          <Button size="lg" render={<a href="#cta" />}>
+          <Button size="lg" render={<a href="/vendor/register" />}>
             {t.header.join}
           </Button>
         </div>
@@ -87,14 +87,16 @@ export function SiteHeader() {
               </a>
             ))}
             <div className="mt-2 flex flex-col gap-2">
-              <Button variant="outline" render={<a href="#" />}>
+              <Button variant="outline" render={<a href="/vendor/login" />}>
                 {t.header.login}
               </Button>
-              <Button render={<a href="#cta" />}>{t.header.join}</Button>
+              <Button render={<a href="/vendor/register" />}>
+                {t.header.join}
+              </Button>
             </div>
           </nav>
         </div>
       )}
     </header>
-  )
+  );
 }
