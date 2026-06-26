@@ -430,6 +430,7 @@ export const translations = {
       noAccount: "ليس لديك حساب؟",
       signIn: "تسجيل الدخول",
       signUp: "إنشاء حساب",
+      googleSignIn: "تسجيل الدخول باستخدام Google",
       backToHome: "العودة للرئيسية"
     },
     footer: {
@@ -872,6 +873,7 @@ export const translations = {
       noAccount: "Don't have an account?",
       signIn: "Sign In",
       signUp: "Sign Up",
+      googleSignIn: "Sign in with Google",
       backToHome: "Back to Home"
     },
     footer: {
